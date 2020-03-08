@@ -1,0 +1,98 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asian Building Operation Data Consortium</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Asian Building Operation Data Consortium"> 
+<!-- //for-mobile-apps -->
+<!-- chart -->
+<script src="js/Chart.js"></script>
+<!-- //chart -->
+<script type='text/javascript' src="js/jquery-1.11.2.min.js"></script>
+<link href="css/style-data.css" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- main -->
+		<h1>Asian Building Operation Data Consortium</h1>
+		<div class="main box box5 shadow5">
+			<div class="main_left">
+				
+				<canvas id="bar" height="195" width="300" style="width: 250px; height: 195px;"></canvas>
+				<script>
+					var barChartData = {
+						labels : ["Mon","Tue","Wed","Thu","Fri","Sat","Mon"],
+						datasets : [
+							{
+								highlightFill: "#45668e",
+								highlightStroke: "#45668e",
+								fillColor : "#1ABC9C",
+								strokeColor : "#1ABC9C",
+								data : [75,65,80,90,80,65]
+							},
+							{
+								highlightFill: "#1abc9c",
+								highlightStroke: "#1abc9c",
+								fillColor : "#45668e",
+								strokeColor : "#45668e",
+								data : [70,65,85,95,75,75]
+							}
+						]
+						
+					};
+						new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+				</script>
+			</div>
+			<div class="main_right">
+				
+			<div>
+			  <p1>Asian Building Operation Data Consortium(ABODC) is a non-profit organization. We publish and share data of various types of buildings. Data may include building information, energy consumption, and system operation. </p1>
+
+			  <a class="learn_more" href="agreement.html">Learn more</a>
+			</div>
+				<script>
+					var doughnutData = [
+							{
+								value: 20,
+								color:"#45668e",
+								highlight: "#1abc9c",
+								label: "Paid"
+							},
+							{
+								value : 50,
+								color : "#5d799b",
+								highlight: "#1abc9c",
+								label: "Direct"
+							},
+							{
+								value : 30,
+								color : "#325279",
+								highlight: "#1abc9c",
+								label: "Organic"
+							}
+						
+						];
+
+					new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);						
+				</script>
+				
+			</div>
+			<div class="clear"> </div>
+		</div>
+	    <div class="signin-form profile admin">
+	
+		</div>
+		<div class="footer">
+		  <p>Copyright © 2018 All Rights Reserved | Design  by A434Group </p>
+		</div>
+	<!-- //main -->
+</body>
+</html>
