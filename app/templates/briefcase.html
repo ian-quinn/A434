@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dropzone.css') }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pan.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">-->
+
+    <link href="https://cdn.bootcss.com/font-awesome/5.12.0/css/all.min.css" rel="stylesheet">
+
+    <!-- to put jQuery here is to ensure every script correctly loaded -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+</head>
+
+<body>
+    {% if current_user.is_authenticated %}
+    <main class="container" style="margin-bottom: 50px;margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="pub-button">
+                    <a data-toggle="collapse" href="#NewFile" role="button" aria-label="Add files!" aria-controls="Add files!">
+                    <i class="fas fa-book fa-2x" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Add files"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse" id="NewFile" style="padding-top: 10px;">
+            <!-- Change action value to your upload address -->
+            <form action="{{ url_for('upload') }}" class="dropzone" method="POST" enctype="multipart/form-data" id="bookcollect" style="border: 2px dashed #eee; border-radius: 8px;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <div class="dz-message needsclick">    
+                Drop files here or click to upload.<br></div>
+            </form>
+        </div>
+
+        <div class="bookshelf">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th style="text-align: center; max-width: 100px;">Byte</th>
+                    <th style="text-align: center; max-width: 100px;">Date</th>
+                    <th style="text-align: center; max-width: 100px;">Tool</th>
+                </tr>
+                </thead>
+                {% for f in files %}
+                <tr>
+                    <td>{{ f.name }}</a></td>
+                    <td style="text-align: right;">{{ f.size }}</td>
+                    <td style="text-align: center;">{{ f.timestamp.strftime('%Y-%m') }}</td>
+                    <td style="text-align: center;">
+                        <form method="post"
+                              action="{{ url_for('delete', file_id=f.id, next=request.full_path) }}" style="display: inline;">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <button class="book-button" onclick="return confirm('Can not be reversed. Are you sure?');"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+    {% else %}
+    <h3><p>You need to login to access this page.</p></h3>
+    {% endif %}
+</body>
+
+<script src="{{ url_for('static', filename='js/dropzone.js') }}"></script>
+<script type="text/javascript">
+    Dropzone.options.bookcollect = {
+    acceptedFiles: ".mp4, .mov, .mkv, .avi, .flv, .rmvb, .mp3, .pdf, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .txt, .md, .csv, .rar, .iso, .zip, .7z",
+};
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</html>

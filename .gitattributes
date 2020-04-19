@@ -1,0 +1,4 @@
+/app/static/css/* linguist-vendored
+/app/static/js/* linguist-vendored
+/js/* linguist-vendored
+/css/* linguist-vendored
