@@ -11,7 +11,7 @@ from app import app, db
 from app.models import User, File
 from app.forms import LoginForm, RegistrationForm
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/briefcase/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('briefcase'))
@@ -29,7 +29,7 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/briefcase/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('briefcase'))
@@ -44,7 +44,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/logout')
+@app.route('/briefcase/logout')
 def logout():
     logout_user()
     return redirect(url_for('briefcase'))
