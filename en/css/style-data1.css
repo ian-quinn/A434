@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main h2.set_tit {
+    border-left: 5px #0089d2 solid;
+    font-size: 30%;
+    font-weight: bold;
+    padding-left: 10px;
+    margin-bottom: 16px;
+}

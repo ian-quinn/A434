@@ -1,0 +1,108 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>data downloading</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Asian Building Operation Data Consortium" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- chart -->
+<script src="js/Chart.js"></script>
+<!-- //chart -->
+<script type='text/javascript' src="js/jquery-1.11.2.min.js"></script>
+	
+<script language=javascript>
+function toopen(){
+    if(document.getElementById("password").value=="123456"){
+           document.forms[0].action="index-data2.html";
+           return true;
+        }else{
+        alert("Please enter correct password！")
+        return false;
+        }
+    }
+</script>
+	
+<link href="css/style-data1.css" rel="stylesheet" type="text/css" media="all" />
+
+	
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- main -->
+	
+	<h1>About </h1>
+	<div class="main box box5 shadow5">
+	 <p><strong>Building operation data is essential for research in the field of building science and simulation. Universities and institutions in Asia desire access to detailed building operation data in order to conduct certain scientific research and building data analyses. Asian Building Operation Data Consortium (ABODC) is a non-profit organization established to gather and share building operatoin data for research purpose. The data base is composed of building energy and performance data contributed by ABODC members. It is only open to ABODC members. If you want to become a ABODC member, qualified data contribution is needed. We will publish all contributed data on this website with permission. </strong></p>
+	</div>
+    <p> For contribution requirements, please contact us at email: xupeng@tongji.edu.cn.</p>    
+
+	
+	<h1>Downloading </h1>
+	<p><label for="password">Password：</p>
+    <p><input type="password" id="password" name="password" class="loginInput" placeholder="" value="" /></p>
+	<table border="2" cellpadding="6" cellspacing="1">
+			<tr>
+			<td bgcolor="#1ABC9C" align="center"><span style="color:#FFFFFF;"><strong>Building_ID</strong></span></td>
+			<td bgcolor="#1ABC9C" align="center"><span style="color:#FFFFFF;"><strong>Location</strong></span></td>
+			<td bgcolor="#1ABC9C" align="center"><span style="color:#FFFFFF;"><strong>Building Type</strong></span></td>
+			<td bgcolor="#1ABC9C" align="center"><span style="color:#FFFFFF;"><strong>Information</strong></span></td>	
+			<td bgcolor="#1ABC9C" align="center"><span style="color:#FFFFFF;"><strong>Download</strong></span></td>	
+			</tr>
+			<tr>
+			<td align="center">001</td>
+			<td>China/Shanghai</td>
+			<td align="center">Hotel</td>
+			<td>· Building_Info <br>
+				· Energy_Hourly</td>
+			
+			<td onclick="return toopen()"> <a href="../download/001.xlsx">Download</a></td>
+			</tr>
+			<tr>
+			<td align="center">002</td>
+			<td>China/Shanghai</td>
+			<td align="center">Office</td>
+			<td>· Building_Info<br>· Energy_Hourly<br></td>	
+			<td><a href="../download/002.rar">Download</a></td>
+			</tr>
+			<tr>
+			<td align="center">003</td>
+			<td>China/Shanghai</td>
+			<td align="center">Hotel</td>
+			<td>· Building_Info<br>· BAS_Data</td>	
+			<td><a href="../download/003.xls">Download</a></td>
+			</tr>
+		    <td align="center">004</td>
+			<td>Korea</td>
+			<td align="center">Unknown</td>
+			<td>· Energy_Hourly</td>	
+			<td><a href="../download/004.xlsx">Download</a></td>
+			</tr>
+	        <td align="center">005</td>
+			<td>Korea</td>
+			<td align="center">Unknown</td>
+			<td>· Energy_Hourly</td>	
+			<td><a href="../download/005.xlsx">Download</a></td>
+			</tr>
+	        <td align="center">006</td>
+			<td>Korea</td>
+			<td align="center">Unknown</td>
+			<td>· Energy_Hourly</td>	
+			<td><a href="../download/006.xlsx">Download</a></td>
+			</tr>
+		</table>
+	    
+
+		
+	<!-- //main -->
+</body>
+</html>
